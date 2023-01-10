@@ -30,12 +30,12 @@ Route::get('posts/{post:slug}', action: function (Post $post) { // Post::where('
 
 Route::get('categories/{category:slug}', action: function (Category $category) {
     return view('posts', [
-        'posts' => $category->posts
+        'posts' => $category->posts->load(['category', 'author'])
     ]);
 });
 
 Route::get('authors/{author:username}', action: function (User $author) {
     return view('posts', [
-        'posts' => $author->posts
+        'posts' => $author->posts->load(['category', 'author'])
     ]);
 });
