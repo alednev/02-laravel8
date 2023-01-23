@@ -21,7 +21,7 @@ Route::get('/', action: function () {
         'posts' => Post::latest()->get(),
         'categories' => Category::all(),
     ]);
-});
+})->name('home');
 
 Route::get('posts/{post:slug}', action: function (Post $post) { // Post::where('slug', $post)->firstOrFail()
     return view('post', [
@@ -35,7 +35,7 @@ Route::get('categories/{category:slug}', action: function (Category $category) {
         'currentCategory' => $category,
         'categories' => Category::all(),
     ]);
-});
+})->name('category');
 
 Route::get('authors/{author:username}', action: function (User $author) {
     return view('posts', [
