@@ -50,9 +50,13 @@
 
             <!-- Search -->
             <span class="relative flex lg:inline-flex bg-gray-100 inline-block rounded-xl items-center px-3 py-2">
-                <form method="get" action="#">
-                    <input type="text" name="search" placeholder="Find something"
-                           class="bg-transparent placeholder-black font-semibold text-sm">
+                <form method="get" action="">
+                    <input type="text"
+                           name="search"
+                           placeholder="Find something"
+                           class="bg-transparent placeholder-black font-semibold text-sm"
+                           value="{{ request('search') }}"
+                    >
                 </form>
              </span>
         </div>
